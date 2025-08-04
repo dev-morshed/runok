@@ -1,0 +1,57 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Newsletter CSS
+----------------------------------------*/
+.newsletter-form{
+    position: relative;
+    .form-control{
+        background-color: #0A0D13;
+        color: var(--rr-color-common-white);
+        border: 1px solid var(--rr-color-border-1);
+        box-shadow: none;
+        outline: none;
+        padding: 24.5px 290px 24.5px 70px;
+        border-radius: 0;
+        @include tp-placeholder{
+            background-color: #0A0D13;
+            color: var(--rr-color-common-white);
+        }
+        &:focus{
+            background-color: #0A0D13;
+        }
+        @include breakpoint(sm){
+            padding: 24.5px 20px;
+        }
+    }
+    .icon{
+        color: var(--rr-color-common-white);
+        font-size: 16px;
+        position: absolute;
+        top: 50%;
+        left: 35px;
+        transform: translateY(-50%);
+        @include breakpoint(sm){
+            display: none;
+        }
+    }
+    .submit-btn{
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        .rr-primary-btn{
+            padding: 19.5px 30px;
+        }
+        @include breakpoint(sm){
+            margin-top: 20px;
+            position: inherit;
+            top: 0;
+            left: 0;
+            transform: translateY(0);
+        }
+    }
+}
+
+
+/* !END: Newsletter CSS */

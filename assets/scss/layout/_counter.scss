@@ -1,0 +1,137 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Counter CSS
+----------------------------------------*/
+.counter-item{
+    @include flex-vertical-center;
+    @include breakpoint(sm){
+        justify-content: center;
+    }
+    .title{
+        color: var(--rr-color-theme-primary);
+        font-size: 120px;
+        font-weight: 700;
+        margin-bottom: 0;
+        line-height: 1;
+        @include breakpoint(lg){
+            font-size: 66px;
+        }
+        @include breakpoint(md){
+            font-size: 70px;
+        }
+        @include breakpoint(sm){
+            font-size: 65px;
+        }
+        @include flex-vertical-center;
+        .odometer-auto-theme{
+            font-family: inherit;
+            line-height: 1;
+        }
+        .odometer-digit-spacer{
+            padding-right: 2px;
+        }
+    }
+    p{
+        font-size: 20px;
+        color: var(--rr-color-common-white);
+        margin-bottom: 0;
+        margin-left: -20px;
+        position: relative;
+        z-index: 1;
+        @include breakpoint(lg){
+            font-size: 16px;
+        }
+        @include breakpoint(sm){
+            font-size: 15px;
+            line-height: 1.2;
+            br{
+                display: block;
+            }
+        }
+    }
+}
+
+.counter-2{
+    padding: 100px 0;
+    @include breakpoint(md){
+        padding: 40px 0;
+    }
+}
+
+
+// Counter Area
+
+.counter-area{
+    background-color: var(--rr-color-bg-1);
+    border-top: 1px solid var(--rr-color-border-1);
+    @include breakpoint(md){
+        padding: 70px 0;
+    }
+}
+
+.counter-container{
+    max-width: 1760px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+}
+
+.counter-card-2{
+    @include flex-vertical-center;
+    column-gap: 25px;
+    border-right: 1px solid var(--rr-color-border-1);
+    padding: 80px 0;
+    @include breakpoint(xxl){
+        flex-direction: column;
+        row-gap: 20px;
+        align-items: start;
+        padding-left: 40px;
+    }
+    @include breakpoint(lg){
+        padding-right: 40px;
+    }
+    @include breakpoint(md){
+        border-right: none;
+        padding: 0;
+    }
+    &.item-4{
+        border-right: none;
+    }
+    &.card-space{
+        padding-left: 40px;
+        padding-right: 40px;
+        @include breakpoint(md){
+            padding: 0;
+        }
+    }
+    .title{
+        font-size: 60px;
+        font-weight: 700;
+        margin-bottom: 0;
+        line-height: 1;
+        @include breakpoint(xxxl){
+            font-size: 40px;
+        }
+        .odometer-auto-theme{
+            line-height: 1;
+            font-family: inherit;
+        }
+    }
+    .counter-right{
+        .sub-title{
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        p{
+            margin-bottom: 0;
+            @include breakpoint(lg){
+                br{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+/* !END: Counter CSS */

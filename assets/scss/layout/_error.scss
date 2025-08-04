@@ -1,0 +1,22 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Error CSS
+----------------------------------------*/
+.error-content{
+    .text{
+        font-size: 80px;
+        font-weight: 500;
+        margin-bottom: 30px;
+        @include breakpoint(sm){
+            font-size: 60px;
+        }
+        span{
+            font-size: 40px;
+            color: rgba(255, 255, 255, 0.3);
+            display: block;
+            margin-top: 20px;
+        }
+    }
+}
+/* !END: Error CSS */

@@ -1,0 +1,734 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Hero CSS
+----------------------------------------*/
+
+.hero-section{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    .hero-bg-shape{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    .hero-shape{
+        position: absolute;
+        bottom: 23%;
+        left: 0;
+    }
+    .hero-img{
+        position: absolute;
+        bottom: -22.5px;
+        right: 0;
+        @include breakpoint(xl){
+            right: -20%;
+        }
+        @include breakpoint(md){
+            max-width: 610px;
+        }
+        @include breakpoint(sm){
+            display: none;
+        }
+    }
+    .hero-images{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 510px;
+        @include breakpoint(xxxl){
+            left: -75px;
+        }
+        @include breakpoint(lg){
+            display: none;
+        }
+        img{
+            margin-right: auto;
+            height: 250px;
+            width: 250px;
+            object-fit: cover;
+            &:nth-child(2){
+                margin:  -30px 0 12px auto;
+                @include breakpoint(xl){
+                    margin-right: 40px;
+                }
+            }
+            &:nth-child(3){
+                margin-left: 50px;
+                @include breakpoint(xl){
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+.hero-content{
+    padding: 300px 0 150px 0;
+    max-width: 820px;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 55px;
+    position: relative;
+    z-index: 2;
+    @include breakpoint(lg){
+        padding-left: 0;
+    }
+    @include breakpoint(md){
+        padding: 100px 0 100px 40px;
+    }
+    @include breakpoint(sm){
+        padding-left: 0;
+    }
+    .sub-title{
+        font-size: 50px;
+        font-weight: 700;
+        @include breakpoint(md){
+            font-size: 35px;
+        }
+        @include breakpoint(sm){
+            font-size: 24px;
+        }
+    }
+    .title{
+        font-size: 135px;
+        font-weight: 800;
+        line-height: 1;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        @include breakpoint(md){
+            font-size: 80px;
+        }
+        @include breakpoint(sm){
+            font-size: 50px;
+        }
+        &:before{
+            background: linear-gradient(270deg, #3F5AF3 0%, transparent 100%);
+            content: "";
+            width: 100%;
+            height: 76%;
+            position: absolute;
+            top: 15%;
+            right: 0;
+            z-index: -1;
+            opacity: 0.95;
+        }
+    }
+    .bottom-title{
+        font-size: 75px;
+        font-weight: 700;
+        margin-bottom: 40px;
+        @include breakpoint(md){
+            font-size: 45px;
+        }
+        @include breakpoint(sm){
+            font-size: 30px;
+        }
+    }
+    .hero-btn{
+        background-image: url(../img/bg-img/hero-btn-bg.png);
+        color: var(--rr-color-common-white);
+        font-size: 60px;
+        height: 180px;
+        width: 180px;
+        @include flex-center;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        @include breakpoint(sm){
+            height: 120px;
+            width: 120px;
+            font-size: 40px;
+        }
+        i{
+            transform: rotate(-45deg) scale(1);
+            @include transition(all 0.3s ease-in-out);
+        }
+        &:before{
+            background-color: #3F5AF3;
+            mix-blend-mode: multiply;
+            content: "";
+            width: 170px;
+            height: 170px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            opacity: 0.9;
+            z-index: -1;
+            @include transition(all 0.3s ease-in-out);
+            @include breakpoint(sm){
+                height: 110px;
+                width: 110px;
+            }
+        }
+        &:hover{
+            &:before{
+                width: 100%;
+                height: 100%;
+            }
+            i{
+                transform: rotate(-45deg) scale(1.05);
+            }
+        }
+    }
+}
+
+
+// Hero Section 2
+
+.hero-section-2{
+    position: relative;
+    overflow: hidden;
+    .hero-text{
+        color: var(--rr-color-common-white);
+        font-size: 150px;
+        font-weight: 700;
+        line-height: 1;
+        position: absolute;
+        bottom: 40px;
+        left: 46.5%;
+        transform: translateX(-50%);
+        text-transform: uppercase;
+        width: 100%;
+        text-align: center;
+        @include flex-vertical-center;
+        justify-content: center;
+        @include breakpoint(xxl){
+            left: 52%;
+            font-size: 100px;
+        }
+        @include breakpoint(lg){
+            font-size: 70px;
+            left: 57%;
+        }
+        @include breakpoint(md){
+            display: none;
+        }
+        .inner-text{
+            color: var(--rr-color-bg-1);
+            margin-bottom: 0;
+            font-size: 150px;
+            font-weight: 700;
+            line-height: 1;
+            padding-left: 15px;
+            position: relative;
+            z-index: 1;
+            @include breakpoint(xxl){
+                font-size: 100px;
+            }
+            @include breakpoint(lg){
+                font-size: 70px;
+            }
+            .container-svg{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 14px;
+                left: 14px;
+                z-index: -1;
+                svg{
+                    display: block;
+                    height: 100%;
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                }
+                text{
+                    display: block;
+                    fill: white;
+                    font-size: 150px;
+                    font-weight: bold;
+                    @include breakpoint(lg){
+                        font-size: 70px;
+                    }
+                    &.dashed{
+                        fill: none;
+                        stroke: var(--rr-color-bg-1);
+                        stroke-width: 1px;
+                        stroke-dasharray: 5px, 5px;
+                        stroke-linejoin: round;
+                        stroke-linecap: round;
+                        &.blue{
+                        stroke: #25303B;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .shapes{
+        .shape{
+            position: absolute;
+            z-index: -1;
+            &.shape-1{
+                top: 0;
+                left: 0;
+            }
+            &.shape-2{
+                top: 0;
+                right: 0;
+            }
+        }
+
+    }
+    .hero-sidebar{
+        writing-mode: vertical-rl;
+        width: 120px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include breakpoint(md){
+            display: none;
+        }
+        &:before{
+            background: rgba(255, 255, 255, 0.8);
+            content: "";
+            width: 1px;
+            height: 113px;
+            position: absolute;
+            top: 0px;
+            right: -1px;
+        }
+        .sidebar-icon{
+            position: absolute;
+            top: 47px;
+            left: 50%;
+            transform: translateX(-50%);
+            .sidebar-trigger{
+                color: var(--rr-color-common-white)
+            }
+        }
+        .sidebar-social{
+            @include flex-vertical-center;
+            column-gap: 70px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            list-style: none;
+            transform: translate(-50%, -50%) rotate(-180deg);
+            @include breakpoint(lg){
+                column-gap: 50px;
+                top: 58%;
+            }
+            li{
+                a{
+                    color: var(--rr-color-common-white);
+                    font-size: 16px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    &:hover{
+                        color: var(--rr-color-theme-primary);
+                    }
+                }
+            }
+        }
+    }
+    .hero-wrap{
+        @include breakpoint(md){
+            flex-direction: column-reverse;
+        }
+    }
+    .hero-img{
+        margin-left: 120px;
+        margin-top: 113px;
+        height: 100%;
+        max-width: 840px;
+        width: 100%;
+        @include breakpoint(md){
+            margin-left: 0;
+            margin-top: 0;
+            padding: 0 50px;
+            margin: 0 auto;
+        }
+        @include breakpoint(sm){
+            padding: 0 20px;
+        }
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .hero-info{
+        margin-top: 113px;
+        margin-left: 110px;
+        @include breakpoint(xxl){
+            margin-left: 135px;
+        }
+        @include breakpoint(lg){
+            margin-left: 125px;
+        }
+        @include breakpoint(md){
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+        @include breakpoint(sm){
+            margin: 50px 20px 0 20px;
+        }
+        .section-heading{
+            .section-title{
+                font-size: 72px;
+                @include breakpoint(lg){
+                    font-size: 45px;
+                }
+                @include breakpoint(md){
+                    font-size: 40px;
+                }
+                @include breakpoint(sm){
+                    font-size: 32px;
+                }
+            }
+            .sub-heading{
+                @include breakpoint(sm){
+                    font-size: 12px;
+                }
+            }
+            p{
+                margin: 30px 0 35px 0;
+            }
+        }
+    }
+}
+
+// Hero Section 3
+.hero-section-3{
+    position: relative;
+    z-index: 1;
+    overflow-x: clip;
+    .hero-round-img{
+        width: 950px;
+        height: 950px;
+        position: absolute;
+        top: -20%;
+        right: -15%;
+        border-radius: 50%;
+        @include breakpoint(lg){
+            right: -35%;
+            top: -35%;
+        }
+        @include breakpoint(md){
+            right: -60%;
+            top: -70%;
+        }
+        @include breakpoint(sm){
+            display: none;
+        }
+        &:before{
+            background-color: var(--rr-color-theme-primary);
+            mix-blend-mode: multiply;
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+        }
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            object-position: -266px 100px;
+        }
+    }
+    .round-shape{
+        background-color: #02050A;
+        height: 800px;
+        width: 800px;
+        border-radius: 50%;
+        position: absolute;
+        top: -29%;
+        right: -21%;
+        @include breakpoint(lg){
+            right: -45%;
+            top: -45%;
+        }
+        @include breakpoint(md){
+            height: 600px;
+            width: 600px;
+        }
+        @include breakpoint(sm){
+            display: none;
+        }
+    }
+    .round-shape-2{
+        background-color: var(--rr-color-bg-1);
+        height: 750px;
+        width: 750px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -50%;
+        right: 14%;
+        opacity: 0.46;
+        @include breakpoint(lg){
+            height: 600px;  
+            width: 600px;
+        }
+        @include breakpoint(sm){
+            display: none;
+        }
+    }
+    .border-shape{
+        background-color: transparent;
+        height: 700px;
+        width: 700px;
+        border-radius: 50%;
+        border: 1px dashed var(--rr-color-bg-1);
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        @include breakpoint(md){
+            display: none;
+        }
+    }
+    .scroll-down-btn{
+        width: 41px;
+        height: 80px;
+        margin: 0 auto;
+        position: absolute;
+        bottom: 150px;
+        left: 49%;
+        transform: translateX(-50%);
+        z-index: 90;
+        animation: hero-anim-2 1s infinite linear alternate-reverse;
+        @include breakpoint(md){
+            bottom: 100px;
+        }
+        @include breakpoint(sm){
+            bottom: 30px;
+            left: 43%;
+        }
+    }
+}
+
+@-webkit-keyframes hero-anim-2 {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(15px);
+        transform: translateY(15px);
+    }
+    }
+    @keyframes hero-anim-2 {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(15px);
+        transform: translateY(15px);
+    }
+}
+
+.hero-content-3{
+    padding: 360px 0 250px 0;
+    padding-left: 75px;
+    position: relative;
+    z-index: 2;
+    @include breakpoint(lg){
+        padding-top: 250px;
+    }
+    @include breakpoint(md){
+        padding-top: 100px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 150px;
+    }
+    @include breakpoint(sm){
+        padding-top: 50px;
+        padding-left: 20px;
+    }
+    .title{
+        font-size: 120px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        &.anim-text{
+            overflow: visible;
+        }
+        br{
+            display: block;
+        }
+        @include breakpoint(lg){
+            font-size: 80px;
+        }
+        @include breakpoint(sm){
+            font-size: 32px;
+        }
+        span{
+            color: var(--rr-color-theme-primary);
+            position: relative;
+            &:before{
+                background-image: url(../img/shapes/hero-shape-4.png);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: contain;
+                content: "";
+                width: 770px;
+                height: 770px;
+                position: absolute;
+                top: 50%;
+                left: 25%;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+                @include breakpoint(lg){
+                    width: 600px;
+                    height: 600px;
+                }
+                @include breakpoint(sm){
+                    width: 250px;
+                    height: 250px;
+                }
+            }
+        }
+    }
+    p{
+        color: var(--rr-color-common-white);
+        font-size: 22px;
+        font-weight: 500;
+        max-width: 880px;
+        width: 100%;
+        line-height: 1.8;
+        margin-bottom: 40px;
+        @include breakpoint(sm){
+            font-size: 16px;
+        }
+    }
+}
+
+// Hero Section 4
+
+.hero-content-4{
+    padding: 360px 0 110px 0;
+    position: relative;
+    z-index: 1;
+    @include breakpoint(lg){
+        padding: 260px 0 100px 0;
+    }
+    @include breakpoint(md){
+        padding: 100px 0 100px 0;
+    }
+    @include breakpoint(sm){
+        padding: 80px 0;
+    }
+    .sub-title{
+        font-size: 100px;
+        font-weight: 200;
+        @include breakpoint(md){
+            font-size: 60px;
+        }
+        @include breakpoint(sm){
+            font-size: 24px;
+        }
+    }
+    .title{
+        font-size: 160px;
+        font-weight: 700;
+        @include breakpoint(md){
+            font-size: 100px;
+        }
+        @include breakpoint(sm){
+            font-size: 45px;
+        }
+        span{
+            position: relative;
+            z-index: 1;
+            line-height: 1;
+            &:before{
+                content: attr(data-text);
+                position: absolute;
+                right: 7px;
+                top: 10px;
+                width: 100%;
+                font-size: 160px;
+                font-weight: 700;
+                color: rgba(255, 255, 255, 0.3);
+                -webkit-text-fill-color: transparent;
+                -webkit-text-stroke-width: 0.5px;
+                -webkit-text-stroke-color: rgba(255, 255, 255, 0.3);
+                z-index: -1;
+                @include breakpoint(md){
+                    font-size: 100px;
+                }
+                @include breakpoint(sm){
+                    font-size: 45px;
+                    top: 8px;
+                }
+            }
+        }
+    }
+    .rr-primary-btn{
+        margin-top: 50px;
+        @include breakpoint(sm){
+            margin-top: 30px;
+        }
+    }
+}
+
+.hero-section-4{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    .shapes{
+        .shape{
+            position: absolute;
+            &.shape-1{
+                top: 0;
+                left: 0;
+            }
+            &.shape-2{
+                bottom: 0;
+                left: 0;
+            }
+        }
+    }
+    .hero-img{
+        max-width: 950px;
+        width: 100%;
+        height: 690px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        @include breakpoint(xxl){
+            max-width: 750px;
+        }
+        @include breakpoint(lg){
+            max-width: 550px;
+        }
+        @include breakpoint(md){
+            max-width: 450px;
+        }
+        &:before{
+            background-color: rgba(131, 131, 131, 0.63);
+            mix-blend-mode: multiply;
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+
+/* !END: Theme Hero CSS */

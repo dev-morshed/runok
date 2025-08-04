@@ -1,0 +1,239 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Team Details CSS
+----------------------------------------*/
+
+// Team Author
+
+.author-wrap{
+    background-color: var(--rr-color-bg-1);
+    padding: 60px;
+    @include breakpoint(lg){
+        padding: 60px 30px;
+    }
+    @include breakpoint(md){
+        padding: 50px 30px;
+    }
+    @include breakpoint(sm){
+        padding: 40px 20px;
+    }
+    .author-img{
+        @include breakpoint(md){
+            text-align: center;
+        }
+    }
+    .author-content{
+        @include breakpoint(md){
+            margin-top: 40px;
+        }
+        .name{
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            @include breakpoint(sm){
+                font-size: 32px;
+            }
+            span{
+                color: var(--rr-color-theme-primary);
+                font-size: 16px;
+                font-weight: 500;
+                display: block;
+                margin-top: 10px;
+            }
+        }
+        p{
+            margin-bottom: 40px;
+        }
+        .author-items{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            border-top: 1px solid var(--rr-color-border-1);
+            border-bottom: 1px solid var(--rr-color-border-1);
+            margin-bottom: 40px;
+            @include breakpoint(sm){
+                grid-template-columns: 1fr;
+            }
+            .author-item{
+                padding: 30px 0;
+                display: grid;
+                align-items: center;
+                grid-template-columns: 50px 1fr;
+                grid-gap: 15px;
+                .icon{
+                    background-color: var(--rr-color-common-white);
+                    color: var(--rr-color-theme-primary);
+                    height: 50px;
+                    width: 50px;
+                    @include flex-center;
+                    border-radius: 50%;
+                }
+                .content{
+                    h4{
+                        font-size: 18px;
+                        font-weight: 600;
+                        margin-bottom: 0;
+                        @include breakpoint(lg){
+                            font-size: 15px;
+                        }
+                        span{
+                            color: var(--rr-color-text-body);
+                            font-size: 16px;
+                            font-weight: 500;
+                            display: block;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+                &:nth-child(1){
+                    border-bottom: 1px solid var(--rr-color-border-1);
+                    border-right: 1px solid var(--rr-color-border-1);
+                    @include breakpoint(sm){
+                        border: none;
+                        padding-left: 0;
+                    }
+                }
+                &:nth-child(2){
+                    padding-left: 30px;
+                    border-bottom: 1px solid var(--rr-color-border-1);
+                    @include breakpoint(sm){
+                        border: none;
+                        padding-left: 0;
+                    }
+                }
+                &:nth-child(3){
+                    border-right: 1px solid var(--rr-color-border-1);
+                    border-bottom: 1px solid var(--rr-color-border-1);
+                    @include breakpoint(sm){
+                        border: none;
+                        padding-left: 0;
+                    }
+                }
+                &:nth-child(4){
+                    padding-left: 30px;
+                    border-bottom: 1px solid var(--rr-color-border-1);
+                    @include breakpoint(sm){
+                        border: none;
+                        padding-left: 0;
+                    }
+                }
+                &:not(:last-of-type){
+                    border-bottom: 1px solid var(--rr-color-border-1);
+                }
+            }
+        }
+    }
+}
+
+// Expertise Area
+
+.expertise-content{
+    padding-right: 30px;
+    @include breakpoint(md){
+        padding-right: 0;
+    }
+    .section-heading{
+        margin-bottom: 40px;
+        .section-title{
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.details-progress{
+    list-style: none;
+    .skills-item{
+        overflow: hidden;
+        &:not(:last-of-type){
+            margin-bottom: 40px;
+        }
+        .title{
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+        }
+        .progress{
+            height: 5px;
+            overflow: visible;
+            .progress-bar{
+                background-color: var(--rr-color-theme-primary);
+                position: relative;
+                overflow: visible;
+                span{
+                    position: absolute;
+                    top: -38px;
+                    right: -15px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: var(--rr-color-common-white);
+                }
+            }
+        }
+    }
+}
+
+.expertise-img-wrap{
+    max-width: 665px;
+    height: 600px;
+    width: 100%;
+    position: relative;
+    padding-left: 30px;
+    @include breakpoint(lg){
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+    @include breakpoint(md){
+        padding-left: 0;
+    }
+    @include breakpoint(sm){
+        margin-top: 0;
+    }
+    .bg-shape{
+        @include background;
+        background-size: contain;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .exp-img{
+        position: absolute;
+        filter: saturate(0);
+        z-index: 1;
+        &.img-1{
+            height: 220px;
+            width: 220px;
+            border-radius: 50%;
+            top: 20px;
+            left: 80px;
+            @include breakpoint(sm){
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        &.img-2{
+            height: 280px;
+            width: 280px;
+            top: 50px;
+            right: 50px;
+            @include breakpoint(sm){
+                display: none;
+            }
+        }
+        &.img-3{
+            height: 290px;
+            width: 290px;
+            bottom: 30px;
+            left: 60px;
+            @include breakpoint(sm){
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
+
+/* !END: Team Details CSS */

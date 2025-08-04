@@ -1,0 +1,310 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Shop CSS
+----------------------------------------*/
+
+.shop-top{
+    margin-bottom: 30px;
+    .left-content{
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1;
+    }
+    .select-control{
+        background-color: transparent;
+        border: 1px solid var(--rr-color-border-1);
+        padding: 14px 30px;
+        padding-right: 60px;
+        height: auto;
+        border-radius: 0;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1;
+        &:after{
+            border: none;
+            height: auto;
+            width: auto;
+            background-image: none;
+            font-family: "Font Awesome 6 Pro";
+            font-size: 14px;
+            font-weight: 700;
+            content: "\f0d7";
+            color: var(--rr-color-text-body);
+            position: absolute;
+            top: 63%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+        .list{
+            background-color: var(--rr-color-bg-1);
+            width: 100%;
+        }
+        &.open{
+            &:after{
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+.shop-item{
+    background-color: var(--rr-color-bg-1);
+    padding: 30px;
+    .shop-thumb{
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        img{
+            width: 100%;
+            @include transition(all 0.4s ease-in-out);
+        }
+        .overlay{
+            background-color: rgba(11, 11, 16, 0.5);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            visibility: hidden;
+            opacity: 0;
+            @include transition(all 0.4s ease-in-out);
+            z-index: 1;
+        }
+        .sale{
+            background-color: var(--rr-color-theme-primary);
+            color: var(--rr-color-common-white);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 5px 20px;
+            text-transform: uppercase;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            z-index: 2;
+        }
+        .shop-list{
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            @include transition(all 0.5s ease-in-out);
+            visibility: hidden;
+            opacity: 0;
+            z-index: 2;
+            li{
+                display: inline-flex;
+                &:not(:last-of-type){
+                    margin-right: 10px;
+                }
+                a{
+                    background-color: var(--rr-color-common-white);
+                    color: var(--rr-color-bg-1);
+                    height: 45px;
+                    width: 45px;
+                    @include flex-center;
+                    border-radius: 50%;
+                    i{
+                        line-height: 1;
+                        display: block;
+                    }
+                    &:hover{
+                        background-color: var(--rr-color-theme-primary);
+                        color: var(--rr-color-common-white);
+                    }
+                }
+            }
+        }
+    }
+    .shop-content{
+        margin-top: 30px;
+        .category{
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--rr-color-text-body);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .title{
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 0;
+            text-transform: capitalize;
+            span{
+                color: var(--rr-color-theme-primary);
+                display: block;
+                font-size: 16px;
+                font-weight: 600;
+                margin-top: 20px;
+                @include flex-vertical-center;
+                .offer{
+                    margin-top: 0;
+                    margin-right: 10px;
+                    text-decoration: line-through;
+                    color: var(--rr-color-text-body);
+                }
+            }
+        }
+    }
+    &:hover{
+        .shop-thumb{
+            img{
+                transform: scale(1.05);
+            }
+            .overlay{
+                visibility: visible;
+                opacity: 1;
+            }
+            .shop-list{
+                top: 50%;
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+// Product Description
+
+.tab-navigation {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tab-navigation button {
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    padding: 0;
+    margin-right: 30px;
+    padding-bottom: 10px;
+    position: relative;
+    @include transition(all 0.3s ease-in-out);
+}
+
+.tab-navigation button:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--rr-color-theme-primary);
+    transition: .5s;
+    opacity: 0;
+}
+
+.tab-navigation button.active:after {
+    opacity: 1;
+    width: 100%;
+}
+
+.tab-navigation button.active,
+.tab-navigation button:hover {
+    color: var(--rr-color-theme-primary);
+}
+
+/*** 7.2 - Tab Description ***/
+
+.tab-content .tab-pane {
+    margin-top: 40px;
+}
+
+.description-meta {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 10px;
+}
+
+.description-meta li span {
+    color: var(--rr-color-theme-primary);
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+/*** 7.3 - Tab Additional Information ***/
+.product-table {
+    background-color: var(--rr-color-bg-1);
+    margin: 0;
+    margin-top: 40px;
+    --bs-table-bg: transparent;
+    &:not(caption)>*>*{
+        border-bottom: 1px solid var(--rr-color-border-1);
+    }
+}
+
+.product-table>:not(:last-child)>:last-child>* {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.product-table tbody tr td,
+.product-table thead tr th {
+    text-align: center;
+}
+
+.product-table tbody tr td:not(:last-of-type),
+.product-table thead tr th:not(:last-of-type) {
+    border-right: 1px solid var(--rr-color-border-1);
+}
+
+.product-table tbody tr td:not(:last-of-type){
+    border-bottom: 1px solid var(--rr-color-border-1);
+}
+
+.product-table thead tr th {
+    color: var(--rr-color-theme-primary);
+}
+
+.product-table tbody tr td {
+    padding: 15px 0;
+    color: #fff;
+}
+
+/*** 7.4 - Tab Review ***/
+.review .comment-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.review .comment-list>li {
+    background: linear-gradient(90deg, rgba(105, 85, 180, 0.1) 0%, rgba(105, 85, 180, 0.3) 50%, rgba(105, 85, 180, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-gap: 30px;
+    align-items: center;
+    padding: 40px;
+}
+
+.review .comment-list .comment-thumb img {
+    border-radius: 50%;
+}
+
+.review .comment-list .comment-author {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.review .comment-list .comment-text h3 span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ddd;
+    display: block;
+}
+
+.review .comment-list .comment-text p {
+    margin: 0;
+}
+
+
+/* !END: Shop CSS */

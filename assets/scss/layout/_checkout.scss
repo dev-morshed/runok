@@ -1,0 +1,301 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Page Header CSS
+----------------------------------------*/
+.checkout-top{
+    margin-bottom: 80px;
+    @include breakpoint(md){
+        margin-bottom: 40px;
+    }
+    .coupon-list{ 
+        .verify-item{
+            .title{
+                background-color: var(--rr-color-bg-1);
+                width: 100%;
+                padding: 15px 30px;
+                font-size: 16px;
+                font-weight: 600;
+                @include transition(all 0.3s ease-in-out);
+                &:hover{
+                    background-color: var(--rr-color-theme-primary);
+                    color: var(--rr-color-common-white);
+                }
+                button{
+                    font-weight: 600;
+                    margin: 0 5px;
+                    text-decoration: underline;
+                }
+            }
+            .login-form{
+                padding-top: 30px;
+                display: none;
+                .form-control{
+                    background-color: var(--rr-color-bg-1);
+                    padding: 15px 30px;
+                    border: none;
+                    box-shadow: none;
+                    font-size: 14px;
+                    color: var(--rr-color-text-body);
+                    border-radius: 0;
+                    margin-bottom: 20px;
+                    max-width: 700px;
+                    width: 100%;
+                    @include tp-placeholder{
+                        color: var(--rr-color-text-body);
+                    }
+                }
+            }
+            .checkbox-wrap{
+                max-width: 700px;
+                width: 100%;
+                margin-bottom: 30px;
+                @include flex-vertical-center;
+                justify-content: space-between;
+                .checkbox-item{
+                    @include flex-vertical-center;
+                    column-gap: 10px;
+                    label{
+                        color: var(--rr-color-common-white);
+                        cursor: pointer;
+                    }
+                }
+                .forgot{
+                    color: var(--rr-color-common-white);
+                    font-weight: 600;
+                    &:hover{
+                        color: var(--rr-color-theme-primary);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.checkout-left{
+    padding-right: 10px;
+    @include breakpoint(md){
+        padding-right: 0;
+    }
+    .form-header{
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 1;
+        margin-bottom: 40px;
+    }
+}
+
+.checkout-form-wrap{
+    .form-group{
+        &:not(:last-of-type){
+            margin-bottom: 30px;
+        }
+    }
+    .form-item{
+        &.name{
+            @include breakpoint(sm){
+                margin-bottom: 30px;
+            }
+        }
+        .form-title{
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .form-control{
+            padding: 18px 20px;
+            background-color: var(--rr-color-bg-1);
+            border: none;
+            box-shadow: none;
+            font-size: 16px;
+            color: var(--rr-color-text-body);
+            border-radius: 0;
+            @include tp-placeholder{
+                color: var(--rr-color-text-body);
+            }
+            &.street-control{
+                margin-bottom: 20px;
+            }
+            &.nice-select{
+                width: 100%;
+                height: auto;
+                line-height: inherit;
+                padding: 18px 20px;
+                &:after{
+                    top: 46%;
+                    width: 10px;
+                    height: 10px;
+                    border-color: var(--rr-color-text-body);
+                    border-bottom: 1px solid var(--rr-color-text-body);
+                    border-right: 1px solid var(--rr-color-text-body);
+                    right: 25px;
+                }
+                .list{
+                    background-color: var(--rr-color-bg-1);
+                    width: 100%;
+                    border-radius: 0;
+                    li{
+                        padding-left: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.checkout-right{
+    padding-left: 10px;
+    @include breakpoint(md){
+        margin-top: 50px;
+        padding-left: 0;
+    }
+    .form-header{
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 1;
+        margin-bottom: 40px;
+    }
+}
+
+.order-box{
+    background-color: var(--rr-color-bg-1);
+    padding: 30px 40px;
+    border: 1px solid var(--rr-color-border-1); 
+    @include breakpoint(sm){
+        padding: 30px 20px;
+    } 
+    .order-item{
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        grid-gap: 20px;
+        &:not(:last-of-type){
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--rr-color-border-1);
+        }
+        @include breakpoint(sm){
+            grid-template-columns: 1fr;
+        }
+        .order-left{
+            .order-img{
+                height: 80px;
+                width: 80px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .product{
+                color: var(--rr-color-common-white);
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 0;
+                line-height: 1;
+                text-transform: uppercase;
+            }
+            .left-title{
+                font-size: 16px;
+                font-weight: 400;
+                color: var(--rr-color-common-white);
+                line-height: 1;
+            }
+        }
+        .order-right{
+            @include flex-vertical-center;
+            justify-content: space-between;
+            column-gap: 15px;
+            flex-wrap: wrap;
+            row-gap: 15px;
+            .content{
+                .category{
+                    color: var(--rr-color-theme-primary);
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    font-weight: 400;
+                    display: block;
+                    line-height: 1;
+                    margin-bottom: 15px;
+                }
+                .title{
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-bottom: 0;
+                    line-height: 1;
+                }
+            }
+            .price{
+                color: var(--rr-color-common-white);
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 0;
+                line-height: 1;
+                text-transform: uppercase;
+            }
+            .right-title{
+                font-size: 16px;
+                font-weight: 400;
+                color: var(--rr-color-common-white);
+                line-height: 1;
+                span{
+                    color: var(--rr-color-text-body);
+                    font-weight: 200;
+                    margin-right: 10px;
+                }
+                &.title-2{
+                    color: var(--rr-color-theme-primary);
+                }
+            }
+        }
+        &.item-1{
+            grid-template-columns: 200px 1fr;
+            @include breakpoint(sm){
+                grid-template-columns: 100px 1fr;
+            }
+            .order-right{
+                justify-content: end;
+            }
+        }
+    }
+}
+
+.payment-option-wrap{
+    margin-top: 40px;
+    .payment-option{
+        .shipping-option{
+            &:not(:last-of-type){
+                margin-bottom: 20px;
+            }
+            label{
+                font-size: 16px;
+                font-weight: 400;
+                color: var(--rr-color-common-white);
+                margin-left: 5px;
+            }
+            .options{
+                input{
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+    .desc{
+        margin: 20px 0;
+    }
+    .form-check{
+        margin-bottom: 40px;
+        .form-check-input{
+            background-color: transparent;
+            border: 1px solid var(--rr-color-border-1);
+            box-shadow: none;
+        }
+        .form-check-label{
+            cursor: pointer;
+        }
+    }
+    .order-btn{
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* !END: Page Header CSS */

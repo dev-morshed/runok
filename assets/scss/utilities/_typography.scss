@@ -1,0 +1,41 @@
+// Font URL
+$font-url: "https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap";
+
+//Font Family
+$font-family: (
+    "ff": (
+        "body": "'Plus Jakarta Sans', sans-serif",
+        "heading": "'Plus Jakarta Sans', serif",
+        "p": "'Plus Jakarta Sans', sans-serif",
+    ),
+);
+
+// Font Weight
+$font-scale: (
+    "fw": (
+        "normal": normal,
+        "thin": 100,
+        "elight": 200,
+        "light": 300,
+        "regular": 400,
+        "medium": 500,
+        "sbold": 600,
+        "bold": 700,
+        "ebold": 800,
+        "black": 900,
+    ),
+);
+
+// Font Size
+$font-size: (
+    "fs": (
+        "body": 16,
+        "p": 16,
+        "h1": 60,
+        "h2": 48,
+        "h3": 24,
+        "h4": 20,
+        "h5": 16,
+        "h6": 14,
+    ),
+);

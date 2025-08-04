@@ -1,0 +1,124 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Project Details CSS
+----------------------------------------*/
+.project-details-content{
+    .project-details-img{
+        height: 700px;
+        width: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @include breakpoint(md){
+            height: 500px;
+        }
+        @include breakpoint(md){
+            height: 400px;
+        }
+    }
+    .project-details-items{
+        background-color: var(--rr-color-bg-1);
+        padding: 40px;
+        @include flex-vertical-center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: 25px;
+        column-gap: 20px;
+        margin-top: 30px;
+        margin-bottom: 65px;
+        border: 1px solid var(--rr-color-border-1);
+        @include breakpoint(md){
+            margin-bottom: 40px;
+        }
+        @include breakpoint(sm){
+            padding: 40px 20px;
+        }
+        .project-details-item{
+            display: grid;
+            align-items: center;
+            grid-template-columns: 50px 1fr;
+            grid-gap: 20px;
+            .icon{
+                background-color: var(--rr-color-border-1);
+                color: var(--rr-color-common-white);
+                height: 50px;
+                width: 50px;
+                @include flex-center;
+                border-radius: 50%;
+            }
+            .content{
+                span{
+                    display: block;
+                    color: var(--rr-color-theme-primary);
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 1;
+                    margin-bottom: 10px;
+                    text-transform: capitalize;
+                    @include breakpoint(sm){
+                        font-size: 12px;
+                    }
+                }
+                .item-title{
+                    font-size: 18px;
+                    font-weight: 700;
+                    margin-bottom: 0;
+                    text-transform: capitalize;
+                    @include breakpoint(sm){
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+    .details-title{
+        font-size: 30px;
+        font-weight: 700;
+        @include breakpoint(sm){
+            font-size: 22px;
+        }
+    }
+}
+
+.project-details-wrap{
+    margin-top: 70px;
+    .project-details-left{
+        padding-right: 20px;
+        @include breakpoint(md){
+            padding-bottom: 40px;
+            padding-right: 0;
+        }
+        .details-item{
+            &:not(:last-of-type){
+                margin-bottom: 50px;
+            }
+            .details-title{
+                margin-bottom: 30px;
+            }
+            p{
+                margin-bottom: 0;
+                span{
+                    color: var(--rr-color-theme-primary);
+                }
+                &.desc{
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+    .project-details-thumb{
+        .details-thumb{
+            &:not(:last-of-type){
+                margin-bottom: 25px;
+            }
+            @include breakpoint(md){
+                text-align: center;
+            }
+        }
+    }
+}
+
+/* !END: Project Details CSS */

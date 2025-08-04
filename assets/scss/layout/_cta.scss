@@ -1,0 +1,187 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Cta CSS
+----------------------------------------*/
+.cta-wrap{
+    .section-heading{
+        .section-title{
+            font-size: 60px;
+            @include breakpoint(lg){
+                max-width: 100%;
+            }
+            @include breakpoint(md){
+                font-size: 32px;
+            }
+        }
+    }
+    .cta-thumb-wrap{
+        @include flex-center;
+        img{
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            filter: grayscale(1);
+        }
+        .cta-btn{
+            background-color: var(--rr-color-theme-primary);
+            color: var(--rr-color-common-white);
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            @include flex-center;
+            border: 10px solid #02050A;
+            font-size: 30px;
+            margin-left: -50px;
+            position: relative;
+            z-index: 2;
+            @include transition(all 0.3s ease-in-out);
+            i{
+                transform: rotate(-45deg);
+                @include transition(all 0.3s ease-in-out);
+            }
+            &:hover{
+                i{
+                    transform: rotate(0);
+                }
+            }
+        }
+    }
+}
+
+
+// Service Cta
+
+.service-cta{
+    position: relative;
+    z-index: 1;
+    .bg-img{
+        @include background;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        filter: saturate(0);
+    }
+    .overlay{
+        background-color: var(--rr-color-theme-primary);
+        mix-blend-mode: multiply;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.service-cta-wrap{
+    position: relative;
+    z-index: 1;
+    @include flex-vertical-center;
+    justify-content: space-between;
+    padding: 100px 0;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    @include breakpoint(md){
+        padding: 60px 0;
+    }
+    .section-heading{
+        .sub-heading{
+            color: var(--rr-color-common-white);
+            &:before{
+                background: linear-gradient(270deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+            }
+        }
+    }
+    .cta-btn{
+        background-color: transparent;
+        border: 1px solid var(--rr-color-common-white);
+        &:before{
+            background-color: var(--rr-color-theme-primary);
+        }
+        &:hover{
+            border: 1px solid var(--rr-color-theme-primary);
+        }
+    }
+}
+
+// Cta 5
+
+.cta-section-5{
+    position: relative;
+    z-index: 1;
+    .bg-img{
+        @include background;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    .overlay{
+        background: #3F5AF3;
+        mix-blend-mode: multiply;
+        transform: rotate(180deg);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    .overlay-2{
+        background: linear-gradient(266.79deg, #1C1C1C 51.86%, rgba(28, 28, 28, 0.32) 78.29%);
+        mix-blend-mode: difference;
+        opacity: 0.47;
+        transform: rotate(180deg);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    .overlay-3{
+        background: linear-gradient(266.79deg, #1C1C1C 51.86%, rgba(28, 28, 28, 0.32) 78.29%);
+        mix-blend-mode: multiply;
+        opacity: 0.15;
+        transform: rotate(180deg);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+
+.cta-wrap-5{
+    @include flex-vertical-center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    row-gap: 40px;
+    .section-heading{
+        .sub-heading{
+            color: var(--rr-color-common-white);
+            &:before{
+                background: linear-gradient(270deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+            }
+        }
+    }
+    .cta-btn{
+        .rr-primary-btn{
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #FFFFFF;
+            backdrop-filter: blur(8.5px);
+            border-radius: 100px;
+            padding: 18px 30px;
+        }
+    }
+}
+
+
+
+/* !END: Cta CSS */

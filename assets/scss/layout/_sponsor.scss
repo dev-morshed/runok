@@ -1,0 +1,98 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Sponsor CSS
+----------------------------------------*/
+.sponsor-wrap{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    border: 1px solid var(--rr-color-bg-1);
+    @include breakpoint(sm){
+        grid-template-columns: 1fr;
+    }
+    .sponsor-item{
+        text-align: center;
+        height: 100%;
+        @include flex-center;
+        padding: 40px 0;
+        @include breakpoint(sm){
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+        .title{
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 30px;
+            margin-bottom: 0;
+            @include breakpoint(lg){
+                padding-left: 10px;
+            }
+            @include breakpoint(md){
+                font-size: 14px;
+            }
+            @include breakpoint(sm){
+                padding-left: 0;
+            }
+        }
+        &.item-1{
+            text-align: left;
+            @include breakpoint(sm){
+                text-align: center;
+            }
+        }
+        &:not(:last-of-type){
+            border-right: 1px solid var(--rr-color-bg-1);
+            @include breakpoint(sm){
+                border-right: none;
+                border-bottom: 1px solid var(--rr-color-bg-1);
+            }
+        }
+        img{
+            @include breakpoint(md){
+                max-width: 75px;
+            }
+        }
+    }
+}
+
+.sponsor-carousel-2{
+    .sponsor-item{
+        img{
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+    }
+}
+
+
+.sponsor-header{
+    .title{
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.5;
+        text-transform: uppercase;
+        margin-bottom: 60px;
+        br{
+            display: none;
+        }
+        @include breakpoint(sm){
+            font-size: 14px;
+            margin-bottom: 30px;
+            line-height: 1.7;
+            br{
+                display: block;
+            }
+        }
+    }
+}
+
+.sponsor-card{
+    img{
+        width: auto;
+        height: auto;
+    }
+}
+
+/* !END: Theme Sponsor CSS */

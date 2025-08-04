@@ -1,0 +1,780 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Slider CSS
+----------------------------------------*/
+.slider-section {
+    position: relative;
+    overflow: hidden;
+    .slider-tab-wrap{
+        position: absolute;
+        bottom: 80px;
+        left: 250px;
+        z-index: 2;
+        max-width: 750px;
+        width: 100%;
+        @include breakpoint(xxl){
+            margin: 0 auto;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+.runok-slider {
+    position: relative;
+    z-index: 2;
+}
+
+.slider-item {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    .overlay{
+        background: #0E0E14;
+        mix-blend-mode: multiply;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.73;
+    }
+    .shape{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        img{
+            height: 100%;
+        }
+    }
+    .slide-img-wrap{
+        height: 960px;
+        @include breakpoint(md){
+            height: 550px;
+        }
+        @include breakpoint(sm){
+            height: 450px;
+        }
+        img{
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+    .slider-content-wrap {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        max-width: 100%;
+        width: 100%;
+        z-index: 10;
+        .hero-content-wrap{
+            @include flex-vertical-center;
+            justify-content: space-between;
+            column-gap: 15px;
+            @include breakpoint(md){
+                margin-bottom: 170px;
+            }
+            @include breakpoint(sm){
+                flex-wrap: wrap;
+                row-gap: 25px;
+                margin-bottom: 0px;
+            }
+            .hero-content{
+                padding: 0;
+                margin-left: 0;
+            }
+            .slider-btn-wrap{
+                .slider-btn{
+                    background: rgba(0, 0, 0, 0.22);
+                    backdrop-filter: blur(3.5px);
+                    font-size: 60px;
+                    color: var(--rr-color-common-white);
+                    height: 200px;
+                    width: 200px;
+                    @include flex-center;
+                    border-radius: 50%;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    @include breakpoint(sm){
+                        height: 100px;
+                        width: 100px;
+                        font-size: 30px;
+                    }
+                    i{
+                        transform: rotate(-45deg);
+                        @include transition (all 0.3s ease-in-out);
+                    }
+                    &:hover{
+                        i{
+                            transform: rotate(0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.slider-tab-wrap{
+    @include breakpoint(sm){
+        display: none;
+    }
+    .swiper-slide{
+        .slider-tab-btn{
+            font-family: var(--rr-ff-heading);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(30px);
+            font-size: 14px;
+            font-weight: 600;
+            padding: 6px 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+        &.swiper-slide-thumb-active{
+            background-color: var(--rr-color-common-white);
+            color: var(--rr-color-theme-primary);
+        }
+    }
+}
+
+.runok-swiper-pagination{
+    height: 100%;
+    width: auto !important;
+    position: absolute;
+    top: 50%;
+    bottom: auto;
+    left: 50px !important;
+    z-index: 2;
+    @include breakpoint(xl){
+        left: 25px!important;
+    }
+    @media (max-width: 1250px){
+        display: none;
+    }
+    .swiper-pagination-bullet{
+        background-color: transparent;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        border-radius: 50%;
+        opacity: 1;
+        display: block;
+        &.swiper-pagination-bullet-active{
+            border: 1px solid var(--rr-color-common-white);
+        }
+        &:before{
+            content: "";
+            background-color: var(--rr-color-common-white);
+            width: 5px;
+            height: 5px;
+            border: 1px solid var(--rr-color-common-white);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &:not(:last-of-type){
+            margin-bottom: 10px;
+        }
+    }
+}
+
+// Slider 2
+
+.runok-slider-2{
+    .slider-item{
+        .overlay{
+            background: #11151C;
+            mix-blend-mode: multiply;
+            opacity: 0.72;
+        }
+        .slider-content{
+            margin-top: 180px;
+            max-width: 660px;
+            width: 100%;
+            @include breakpoint(xxxl){
+                margin-left: 150px;
+            }
+            @include breakpoint(xxl){
+                margin-left: 200px;
+            }
+            @include breakpoint(md){
+                margin-top: 0;
+                margin-left: 0;
+            }
+            .section-heading{
+                padding-bottom: 40px;
+                margin-bottom: 50px;
+                position: relative;
+                .border-line{
+                    background-color: rgba(255, 255, 255, 0.3);
+                    width: 100%;
+                    height: 1px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                }
+                .sub-heading{
+                    color: var(--rr-color-common-white);
+                    padding-left: 50px;
+                    &:before{
+                        background: linear-gradient(270deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+                        content: "";
+                        width: 37px;
+                        height: 10px;
+                        position: absolute;
+                        top: 50%;
+                        left: 0px;
+                        transform: translateY(-50%);
+                        opacity: 1;
+                        @include transition(all 0.3s ease-in-out);
+                    }
+                }
+                .section-title{
+                    font-size: 60px;
+                    margin-left: 0;
+                    @include breakpoint(sm){
+                        font-size: 27px;
+                    }
+                }
+            }
+            .slider-btn-wrap{
+                @include flex-vertical-center;
+                flex-wrap: wrap;
+                row-gap: 20px;
+                column-gap: 30px;
+                .slider-text-btn{
+                    color: var(--rr-color-common-white);
+                    font-size: 16px;
+                    font-weight: 600;
+                    &:hover{
+                        color: var(--rr-color-theme-primary);
+                    }
+                }
+            }
+        }
+    }
+    .slider-arrow{
+        @include breakpoint(md){
+            display: none;
+        }
+        .slider-nav{
+            background: rgba(0, 0, 0, 0.22);
+            backdrop-filter: blur(3.5px);
+            color: var(--rr-color-common-white);
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            @include flex-center;
+            position: absolute;
+            top: 50%;
+            left: 100px;
+            z-index: 10;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            @include breakpoint(xxxl){
+                left: 50px;
+            }
+            &.slider-next{
+                left: auto;
+                right: 100px;
+                @include breakpoint(xxxl){
+                    right: 50px;
+                }
+            }
+        }
+    }
+}
+
+
+/* Text Animation */
+.runok-animation,
+.runok-animation span {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+}
+
+.runok-animation span {
+    display: inline-block;
+}
+
+/* Fade Effect */
+.runok-fadeIn {
+    animation-name: asFadeIn;
+}
+
+@keyframes asFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.runok-fadeInLeft {
+    animation-name: asFadeInLeft;
+}
+
+@keyframes asFadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.runok-fadeInRight {
+    animation-name: asFadeInRight;
+}
+
+@keyframes asFadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.runok-fadeInDown {
+    animation-name: asFadeInTop;
+}
+
+@keyframes asFadeInTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.runok-fadeInUp {
+    animation-name: asFadeInBottom;
+}
+
+@keyframes asFadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Move From Effect */
+.runok-moveFromLeft {
+    animation-name: asMoveFromLeft;
+}
+
+@keyframes asMoveFromLeft {
+    from {
+        visibility: hidden;
+        transform: translateX(-50px);
+    }
+
+    to {
+        visibility: visible;
+    }
+}
+
+.runok-moveFromRight {
+    animation-name: asMoveFromRight;
+}
+
+@keyframes asMoveFromRight {
+    from {
+        visibility: hidden;
+        transform: translateX(50px);
+    }
+
+    to {
+        visibility: visible;
+    }
+}
+
+.runok-moveFromTop {
+    animation-name: asMoveFromTop;
+}
+
+@keyframes asMoveFromTop {
+    from {
+        visibility: hidden;
+        transform: translateY(-50px);
+    }
+
+    to {
+        visibility: visible;
+    }
+}
+
+.runok-moveFromBottom {
+    animation-name: asMoveFromBottom;
+}
+
+@keyframes asMoveFromBottom {
+    from {
+        visibility: hidden;
+        transform: translateY(50px);
+    }
+
+    to {
+        visibility: visible;
+    }
+}
+
+/* Blur Effect */
+
+.runok-blurIn {
+    animation-name: asBlurIn;
+}
+
+@keyframes asBlurIn {
+    from {
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+.runok-blurInLeft {
+    animation-name: asBlurInLeft;
+}
+
+@keyframes asBlurInLeft {
+    from {
+        transform: translateX(50px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+.runok-blurInRight {
+    animation-name: asBlurInRight;
+}
+
+@keyframes asBlurInRight {
+    from {
+        transform: translateX(-50px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+.runok-blurInTop {
+    animation-name: asBlurInTop;
+}
+
+@keyframes asBlurInTop {
+    from {
+        transform: translateY(50px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+.runok-blurInBottom {
+    animation-name: asBlurInBottom;
+}
+
+@keyframes asBlurInBottom {
+    from {
+        transform: translateY(-50px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+/* Zoom Effect */
+.runok-zoomIn {
+    animation-name: asZoomIn;
+}
+
+@keyframes asZoomIn {
+    from {
+        transform: scale(5);
+        opacity: 0;
+    }
+}
+
+.runok-zoomInLeft {
+    animation-name: asZoomInLeft;
+}
+
+@keyframes asZoomInLeft {
+    from {
+        transform: scale(5) translateX(-50%);
+        opacity: 0;
+    }
+}
+
+.runok-zoomInRight {
+    animation-name: asZoomInRight;
+}
+
+@keyframes asZoomInRight {
+    from {
+        transform: scale(5) translateX(50%);
+        opacity: 0;
+    }
+}
+
+.runok-zoomInTop {
+    animation-name: asZoomInTop;
+}
+
+@keyframes asZoomInTop {
+    from {
+        transform: scale(10) translateY(-50%);
+        opacity: 0;
+    }
+}
+
+.runok-zoomInBottom {
+    animation-name: asZoomInBottom;
+}
+
+@keyframes asZoomInBottom {
+    from {
+        transform: scale(10) translateY(50%);
+        opacity: 0;
+    }
+}
+
+/* Flip Effect */
+.runok-flipInTop {
+    animation-name: asFlipInTop;
+}
+
+@keyframes asFlipInTop {
+    from {
+        transform: perspective(600px);
+        opacity: 0;
+    }
+
+    30% {
+        transform: perspective(600px) rotateX(180deg);
+        transform-origin: 0 0;
+        animation-timing-function: ease-out;
+    }
+
+    to {
+        transform: perspective(600px);
+    }
+}
+
+.runok-flipInBottom {
+    animation-name: asFlipInBottom;
+}
+
+@keyframes asFlipInBottom {
+    from {
+        transform: perspective(600px);
+        opacity: 0;
+    }
+
+    30% {
+        transform: perspective(600px) rotateX(180deg);
+        transform-origin: bottom;
+        animation-timing-function: ease-out;
+    }
+
+    to {
+        transform: perspective(600px);
+    }
+}
+
+/* Roll Effect */
+.runok-rollFromLeft {
+    animation-name: asRollFromLeft;
+}
+
+@keyframes asRollFromLeft {
+    from {
+        transform: translateX(-60px) perspective(600px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+.runok-rollFromRight {
+    animation-name: asRollFromRight;
+}
+
+@keyframes asRollFromRight {
+    from {
+        transform: translateX(60px) perspective(600px) rotateY(-180deg);
+        opacity: 0;
+    }
+}
+
+.runok-rollFromTop {
+    animation-name: asRollFromTop;
+}
+
+@keyframes asRollFromTop {
+    from {
+        transform: translateY(-60px) perspective(600px) rotateX(180deg);
+        opacity: 0;
+    }
+}
+
+.runok-rollFromBottom {
+    animation-name: asRollFromBottom;
+}
+
+@keyframes asRollFromBottom {
+    from {
+        transform: translateY(60px) perspective(600px) rotateX(-180deg);
+        opacity: 0;
+    }
+}
+
+/* Rotate Skate Effect */
+.runok-rotateSkateInRight {
+    animation-name: asRotateSkateInRight;
+}
+
+@keyframes asRotateSkateInRight {
+    from {
+        transform: scaleX(0.2) translateX(100px);
+        opacity: 0;
+    }
+}
+
+.runok-rotateSkateInLeft {
+    animation-name: asRotateSkateInLeft;
+}
+
+@keyframes asRotateSkateInLeft {
+    from {
+        transform: scaleX(0.2) translateX(-100px);
+        opacity: 0;
+    }
+}
+
+.runok-rotateSkateInTop {
+    animation-name: asRotateSkateInTop;
+}
+
+@keyframes asRotateSkateInTop {
+    from {
+        transform: scaleY(0.2) translateY(-100px);
+        opacity: 0;
+    }
+}
+
+.runok-rotateSkateInBottom {
+    animation-name: asRotateSkateInBottom;
+}
+
+@keyframes asRotateSkateInBottom {
+    from {
+        transform: scaleY(0.2) translateY(100px);
+        opacity: 0;
+    }
+}
+
+/* PopUp Effect */
+.runok-popUp {
+    animation-name: asPopUp;
+}
+
+@keyframes asPopUp {
+    0% {
+        visibility: hidden;
+    }
+
+    50% {
+        transform: scale(1.1);
+        visibility: visible;
+    }
+}
+
+.runok-popUpLeft {
+    animation-name: asPopUpLeft;
+}
+
+@keyframes asPopUpLeft {
+    0% {
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: visible;
+        transform: translateX(-20px) scale(1.1);
+        animation-timing-function: ease-in;
+    }
+}
+
+.runok-popUpRight {
+    animation-name: asPopUpRight;
+}
+
+@keyframes asPopUpRight {
+    0% {
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: visible;
+        transform: translateX(20px) scale(1.1);
+        animation-timing-function: ease-in;
+    }
+}
+
+/* Kenburns Top */
+
+.swiper-slide-active .kenburns-top {
+	-webkit-animation-name: kenburns-top;
+	animation-name: kenburns-top;
+}
+
+@-webkit-keyframes kenburns-top {
+	0% {
+		-webkit-transform: scale(1) translateY(0);
+		transform: scale(1) translateY(0);
+		-webkit-transform-origin: 50% 16%;
+		transform-origin: 50% 16%;
+	}
+
+	100% {
+		-webkit-transform: scale(1.08) translateY(-15px);
+		transform: scale(1.08) translateY(-15px);
+		-webkit-transform-origin: top;
+		transform-origin: top;
+	}
+}
+
+@keyframes kenburns-top {
+	0% {
+		-webkit-transform: scale(1) translateY(0);
+		transform: scale(1) translateY(0);
+		-webkit-transform-origin: 50% 16%;
+		transform-origin: 50% 16%;
+	}
+
+	100% {
+		-webkit-transform: scale(1.08) translateY(-15px);
+		transform: scale(1.08) translateY(-15px);
+		-webkit-transform-origin: top;
+		transform-origin: top;
+	}
+}
+
+
+
+/* !END: Theme Slider CSS */

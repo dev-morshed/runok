@@ -1,0 +1,95 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Contact CSS
+----------------------------------------*/
+
+.contact-content{
+    background-color: var(--rr-color-bg-1);
+    padding: 40px 50px;
+    border: 1px solid var(--rr-color-border-1);
+    @include breakpoint(sm){
+        padding: 30px 20px;
+    }
+    .section-heading{
+        margin-bottom: 30px;
+        .section-title{
+            font-size: 36px;
+            margin-bottom: 20px;
+            @include breakpoint(md){
+                font-size: 32px;
+            }
+        }
+    }
+    .contact-list{
+        .list-item{
+            display: grid;
+            align-items: center;
+            grid-template-columns: 75px 1fr;
+            grid-gap: 20px;
+            &:not(:last-of-type){
+                margin-bottom: 25px;
+                padding-bottom: 25px;
+                border-bottom: 1px solid var(--rr-color-border-1);
+            }
+            @include breakpoint(sm){
+                grid-template-columns: 1fr;
+            }
+            .icon{
+                background-color: var(--rr-color-border-1);
+                color: var(--rr-color-theme-primary);
+                font-size: 30px;
+                height: 75px;
+                width: 75px;
+                @include flex-center;
+                @include transition(all 0.3s ease-in-out);
+            }
+            .content{
+                .title{
+                    font-size: 20px;
+                    font-weight: 600;
+                    line-height: 1;
+                    margin-bottom: 10px;
+                }
+                p{
+                    margin-bottom: 0;
+                }
+                a{
+                    display: block;
+                }
+                span{
+                    display: block;
+                }
+            }
+            &:hover{
+                .icon{
+                    background-color: var(--rr-color-theme-primary);
+                    color: var(--rr-color-common-white);
+                }
+            }
+        }
+    }
+}
+
+.contact-wrap{
+    background-color: var(--rr-color-grey-1);
+    padding: 60px;
+    align-items: end;
+    @include breakpoint(sm){
+        padding: 40px 20px;
+    }
+    .section-heading{
+        .section-title{
+            margin: 0;
+        }
+    }
+}
+
+.blog-contact-form.form-2{
+    border: 1px solid var(--rr-color-border-1);
+}
+.map-wrapper{
+    margin-bottom: -10px;
+}
+
+/* !END: Theme Contact CSS */

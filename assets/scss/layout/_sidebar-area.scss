@@ -1,0 +1,317 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Sidebar CSS
+----------------------------------------*/
+
+#sidebar-overlay,
+.sidebar-trigger,
+.sidebar-area {
+    display: none;
+}
+
+.sidebar-trigger {
+    display: block;
+}
+
+.sidebar-area {
+    background-color: var(--rr-color-bg-1);
+    border-left: 1px solid var(--rr-color-border-1);
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+    width: 450px;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: scroll;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    padding: 60px 40px;
+}
+
+.open-sidebar .sidebar-area {
+    right: 0;
+    visibility: visible;
+    transform: translate(0);
+}
+
+.sidebar-trigger.close {
+    position: absolute;
+    right: 30px;
+    top: 63px;
+    color: var(--grey-color);
+    @include transition(all 0.3s ease-in-out);
+    &:hover{
+        color: var(--rr-color-theme-primary);
+    }
+
+}
+
+.sidebar-trigger.close svg {
+    fill: currentColor;
+    stroke: none;
+    width: 20px;
+    height: 20px;
+}
+
+.sidebar-content .site-logo {
+    margin-bottom: 40px;
+}
+
+.sidebar-content .site-logo img {
+    max-width: 200px;
+}
+
+.sidebar-content .sidebar-info li {
+    font-size: 18px;
+}
+
+.sidebar-content .sidebar-social li {
+    display: inline-block;
+    margin: 0 3px;
+    padding-top: 30px;
+}
+
+.sidebar-content .sidebar-social li a {
+    display: inline-block;
+    border: 1px solid var(--border-1);
+    font-size: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.sidebar-content .sidebar-social li a:after {
+    background-color: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 59%;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.sidebar-content .sidebar-social li a:hover {
+    border: 1px solid var(--primary-color);
+    color: #fff;
+}
+
+.sidebar-content .sidebar-social li:hover a:after {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.4s;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.sidebar-content .list-post-area {
+    margin: 50px 0 20px 0;
+}
+
+/*Scrollbar Style*/
+.sidebar-area::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.sidebar-area::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    background: #ccc;
+}
+
+.sidebar-area::selection {
+    background-color: #999;
+    color: #fff;
+}
+
+.sidebar-area-webkit-::selection {
+    background-color: #999;
+    color: #fff;
+}
+
+.sidebar-area::-moz-selection {
+    background-color: #999;
+    color: #fff;
+}
+
+#sidebar-overlay {
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    transition: all 0s ease-in-out;
+    width: calc(100% - 400px);
+    z-index: -1;
+}
+
+.open-sidebar #sidebar-overlay {
+    opacity: 1;
+    z-index: 1002;
+    transition: all 0.6s ease-in-out;
+    transition-delay: 0.3s;
+}
+
+@media (max-width: 992px) {
+    .sidebar-content .list-post-area.list-2 {
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+
+    .sidebar-area {
+        width: 400px;
+        padding: 60px 30px;
+        justify-content: center;
+    }
+
+    .side-menu-logo{
+        margin-bottom: 50px;
+    }
+
+    .side-menu-wrap{
+        margin-bottom: 70px;
+    }
+
+    .side-menu-header h3{
+        display: none;
+    }
+
+    .side-menu-list li a{
+        font-size: 14px;
+    }
+    
+    .side-menu-list li p{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 767px) {
+    .sidebar-area {
+        width: 320px;
+        padding: 60px 20px 60px 20px;
+    }
+
+    .sidebar-content .list-post-area.list-2 .list-post-card .post-img {
+        height: 90px;
+        width: 90px;
+    }
+
+    .sidebar-content .list-post-area.list-2 .list-post-card {
+        grid-template-columns: 90px 1fr;
+    }
+}
+
+.side-menu-logo{
+    max-width: 150px;
+}
+
+.side-menu-about {
+    margin: 50px 0 50px 0;
+    @include breakpoint(md){
+        display: none;
+    }
+}
+
+.side-menu-about p {
+    margin: 25px 0;
+}
+
+.side-menu-header h3 {
+    font-size: 30px;
+    font-weight: 600px;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.side-menu-content .side-menu-header,
+.side-menu-about .side-menu-header{
+    margin-bottom: 20px;
+}
+
+.side-menu-list {
+    margin: 25px 0 35px 0;
+}
+
+.side-menu-list li {
+    display: flex;
+    align-items: center;
+}
+
+.side-menu-list li:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+.side-menu-list li i {
+    background-color: var(--rr-color-theme-primary);
+    font-size: 12px;
+    color: var(--rr-color-common-white);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid var(--rr-color-border-1);
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.side-menu-list li:hover i {
+    background-color: var(--rr-color-theme-primary);
+    color: #fff;
+}
+
+.side-menu-list li p {
+    padding-left: 10px;
+    margin-bottom: 0;
+}
+
+.side-menu-list li a{
+    font-size: 16px;
+    color: var(--rr-color-text-body);
+    padding-left: 10px;
+    &:hover{
+        color: var(--rr-color-theme-primary);
+    }
+}
+
+.side-menu-social{
+    margin-top: 40px;
+    list-style: none;
+    li{ 
+        display: inline-flex;
+        &:not(:last-of-type){
+            margin-right: 10px;
+        }
+        a{
+            background-color: var(--rr-color-border-1);
+            font-size: 17px;
+            color: var(--rr-color-common-white);
+            height: 40px;
+            width: 40px;
+            @include flex-center;
+            border: 1px solid var(--rr-color-border-1);
+            &:hover{
+                background-color: var(--rr-color-theme-primary);
+                color: var(--rr-color-common-white);
+            }
+        }
+    }
+}
+
+
+/* !END: Sidebar CSS */

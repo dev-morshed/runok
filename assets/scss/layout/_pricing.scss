@@ -1,0 +1,121 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Pricing CSS
+----------------------------------------*/
+
+.pricing-tab{
+    .nav-wrap{
+        @include flex-center;
+        .nav-tabs{
+            background-color: var(--rr-color-common-white);
+            display: inline-flex;
+            align-items: center;
+            border-bottom: none;
+            border-radius: 100px;
+            padding: 10px;
+            margin-bottom: 30px;
+            .nav-link{
+                color: var(--rr-color-heading-primary);
+                font-size: 16px;
+                font-weight: 600;
+                border-radius: 100px;
+                border: none;
+                margin: 0 auto;
+                margin-bottom: 0;
+                &.active{
+                    background-color: rgba(63, 90, 243, 0.1);
+                    color: var(--rr-color-heading-primary);
+                    border: none;
+                    margin-bottom: 0;
+                }
+                span{
+                    background-color: var(--rr-color-theme-primary);
+                    color: var(--rr-color-common-white);
+                    font-size: 12px;
+                    padding: 3px 10px;
+                    font-weight: 700;
+                    border-radius: 100px;
+                }
+            }
+        }
+    }
+}
+
+// .tab-pane.active.show .row>div
+.tab-pane.active.show .row{
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-name: fade-in-bottom;
+    animation-name: fade-in-bottom;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-fill-mode: both;
+    transition: all 0.8s ease-in-out;
+    transition-duration: 2000ms;
+    animation-delay: 0.1s;
+}
+
+.pricing-item{
+    background-color: var(--rr-color-bg-1);
+    padding: 40px 50px;
+    border: 1px solid var(--rr-color-border-1);
+    @include breakpoint(sm){
+        padding: 30px 20px;
+    }
+    .plan{
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+    .price{
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 15px;
+    }
+    span{
+        color: var(--rr-color-text-body);
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .pricing-btn-wrap{
+        margin: 30px 0 35px 0;
+        .pricing-btn{
+            width: 100%;
+            justify-content: center;
+            &:before{
+                background-color: var(--rr-color-common-white);
+            }
+            &:hover{
+                color: var(--rr-color-heading-primary);
+            }
+            &:not(:last-of-type){
+                margin-bottom: 10px;
+            }
+            &:nth-child(2){
+                background-color: var(--rr-color-common-white);
+                color: var(--rr-color-heading-primary);
+                &:before{
+                    background-color: var(--rr-color-theme-primary);
+                }
+                &:hover{
+                    color: var(--rr-color-common-white);
+                }
+            }
+        }
+    }
+    .feature{
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    p{
+        font-size: 16px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+/* !END: Pricing CSS */

@@ -1,0 +1,99 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Brand CSS
+----------------------------------------*/
+
+.brand-section{
+    overflow: hidden;
+}
+
+.brand-wrap{
+    background-color: var(--rr-color-bg-1);
+    max-width: 1840px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    .round-shape{
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+    }
+    .brand-img-wrap{
+        background-color: var(--rr-color-bg-1);
+        mask-image: url(../img/images/mask-img-1.png);
+        mask-repeat: no-repeat;
+        mask-size: cover;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        .brand-img{
+            position: relative;height: 100%;
+            width: 100%;
+            &:before{
+                background-color: #3F5AF3;
+                mix-blend-mode: multiply;
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+            img{
+                width: 883px;
+                height: 640px;
+                position: absolute;
+                top: -7%;
+                right: -3%;
+                object-position: center;
+                object-fit: cover;
+                filter: saturate(0);
+            }
+        }
+    }
+}
+
+.brand-content{
+    .section-heading{
+        .section-title{
+            margin-bottom: 30px;
+        }
+        p{
+            margin-bottom: 30px;
+            max-width: 690px;
+            width: 100%;
+        }
+    }
+    .brand-list{
+        @include flex-vertical-center;
+        flex-wrap: wrap;
+        row-gap: 30px;
+        list-style: none;
+        position: relative;
+        z-index: 1;
+        li{
+            &:not(:last-of-type){
+                margin-right: 100px;
+                @include breakpoint(lg){
+                    margin-right: 50px;
+                }
+            }
+            a{
+                display: block;
+                max-width: 76px;
+                width: 100%;
+                height: 76px;
+            }
+        }
+    }
+}
+
+/* !END: Brand CSS */

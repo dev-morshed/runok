@@ -1,0 +1,45 @@
+// Responsive mixins
+
+@mixin breakpoint($point: lg) {
+    @if $point == xxxl {
+        @media (max-width: 1700px) {
+            @content;
+        }
+    }
+
+    @if $point == xxl {
+        @media (max-width: 1600px) {
+            @content;
+        }
+    }
+
+    @if $point == xl {
+        @media (max-width: 1399px) {
+            @content;
+        }
+    }
+
+    @if $point == lg {
+        @media (max-width: 1170px) {
+            @content;
+        }
+    } @else if $point == md {
+        @media only screen and (max-width: 992px) {
+            @content;
+        }
+    } @else if $point == sm {
+        @media only screen and (max-width: 767px) {
+            @content;
+        }
+    }
+
+    @if $point == min-lg {
+        @media (min-width: 993px) {
+            @content;
+        }
+    } @else if $point == min-md {
+        @media only screen and (min-width: 768px) {
+            @content;
+        }
+    }
+}

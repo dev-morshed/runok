@@ -1,0 +1,70 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Exp CSS
+----------------------------------------*/
+
+.exp-content{
+    padding-right: 20px;
+    @include breakpoint(md){
+        padding-right: 0;
+    }
+    .skills-items{
+        list-style: none;
+        margin-top: 30px;
+        .skills-item{
+            overflow: hidden;
+            &:not(:last-of-type){
+                margin-bottom: 30px;
+            }
+            .title{
+                font-family: var(--rr-ff-body);
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 15px;
+            }
+            .progress{
+                height: 4px;
+                overflow: visible;
+                .progress-bar{
+                    background-color: var(--rr-color-theme-primary);
+                    border-radius: 20px;
+                    position: relative;
+                    overflow: visible;
+                    span{
+                        position: absolute;
+                        top: -35px;
+                        right: -15px;
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: var(--rr-color-common-white);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.exp-img{
+    height: 100%;
+    max-width: 678px;
+    width: 100%;
+    padding-left: 20px;
+    @include breakpoint(md){
+        padding-left: 0;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+    @include breakpoint(sm){
+        height: 350px;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(0) contrast(110%);
+    }
+}
+
+/* !END: Exp CSS */
